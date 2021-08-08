@@ -6,7 +6,7 @@ on:
 jobs:
   static:
     runs-on: ubuntu-20.04
-    name: PHP Static Analysis ${{ matrix.php }} = Laravel ${{ matrix.laravel }}
+    name: Static Analysis PHP-${{ matrix.php }} Laravel-${{ matrix.laravel }}
     strategy:
       fail-fast: true
       matrix:
@@ -56,7 +56,7 @@ jobs:
             laravel: '^8.0'
             coverage: true
 
-    name: Unit Tests ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
+    name: Unit Tests PHP-${{ matrix.php }} Laravel-${{ matrix.laravel }}
 
     steps:
       - name: Checkout code
