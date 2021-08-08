@@ -11,6 +11,9 @@
 
 declare(strict_types=1);
 
+/**
+ * @covers \App\Http\Controllers\ExampleController
+ */
 class ExampleTest extends TestCase
 {
     /**
