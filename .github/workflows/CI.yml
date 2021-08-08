@@ -6,7 +6,7 @@ on:
 jobs:
   static:
     runs-on: ubuntu-20.04
-    name: Static Analysis PHP-${{ matrix.php }} Laravel ${{ matrix.laravel }}
+    name: Static Analysis (PHP ${{ matrix.php }})(Laravel ${{ matrix.laravel }})
     strategy:
       fail-fast: true
       matrix:
@@ -21,7 +21,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
-          tools: composer:v2
+          tools: composer:v2, cs2pr
           coverage: pcov
 
       - name: Cache Composer cache
@@ -61,7 +61,7 @@ jobs:
             laravel: '^8.0'
             coverage: true
 
-    name: Unit Tests PHP-${{ matrix.php }} Laravel ${{ matrix.laravel }}
+    name: PHPUnit (PHP ${{ matrix.php }})(Laravel ${{ matrix.laravel }})
 
     steps:
       - name: Checkout code
